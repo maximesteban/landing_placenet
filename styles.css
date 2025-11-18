@@ -247,14 +247,32 @@ main {
   width: clamp(220px, 35vw, 320px);
   aspect-ratio: 1;
   margin-inline: 0;
+  filter: drop-shadow(0 0 30px rgba(78, 242, 255, 0.3));
+}
+
+.boot__rings::before,
+.boot__rings::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(78, 242, 255, 0.25), transparent 65%);
+  opacity: 0.6;
+  animation: haloPulse 4s ease-in-out infinite;
+}
+
+.boot__rings::after {
+  inset: -10%;
+  animation-delay: 1.2s;
 }
 
 .ring {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   animation: pulse 6s linear infinite;
+  box-shadow: 0 0 25px rgba(78, 242, 255, 0.2), inset 0 0 20px rgba(78, 242, 255, 0.15);
 }
 
 .ring--middle {
@@ -271,11 +289,18 @@ main {
   position: absolute;
   inset: 35%;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(78, 242, 255, 0.1));
   display: grid;
   place-items: center;
   font-size: 2rem;
   font-weight: 600;
+  box-shadow: 0 0 40px rgba(78, 242, 255, 0.4), inset 0 0 25px rgba(255, 255, 255, 0.25);
+}
+
+.ring__core p {
+  margin: 0;
+  font-size: 2.4rem;
+  letter-spacing: 0.1em;
 }
 
 .boot__log {
@@ -310,12 +335,21 @@ main {
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  border: 1px solid var(--accent);
-  background: transparent;
+  border: 2px solid var(--accent);
+  background: radial-gradient(circle, rgba(78, 242, 255, 0.25), rgba(0, 0, 0, 0.4));
   color: var(--text);
   text-transform: uppercase;
+  font-weight: 600;
   cursor: pointer;
   overflow: hidden;
+  box-shadow: 0 0 40px rgba(78, 242, 255, 0.4), inset 0 0 25px rgba(78, 242, 255, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hold-button:hover,
+.hold-button:focus-visible {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(78, 242, 255, 0.55), inset 0 0 35px rgba(78, 242, 255, 0.25);
 }
 
 .hold-button__progress {
@@ -332,6 +366,7 @@ main {
   transform: scale(1);
   opacity: 1;
   animation: fill 2s linear forwards;
+  border-width: 6px;
 }
 
 .memory {
@@ -708,16 +743,16 @@ main {
 
 @keyframes pulse {
   0% {
-    opacity: 0.1;
-    transform: scale(0.95);
+    opacity: 0.3;
+    transform: scale(0.92);
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.8;
     transform: scale(1);
   }
   100% {
-    opacity: 0.1;
-    transform: scale(0.95);
+    opacity: 0.3;
+    transform: scale(0.92);
   }
 }
 
@@ -727,6 +762,21 @@ main {
   }
   to {
     transform: scale(1);
+  }
+}
+
+@keyframes haloPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.2;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 0.15;
   }
 }
 
