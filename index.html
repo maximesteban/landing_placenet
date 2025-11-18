@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placenet - El Sexto Sentido</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Progress Indicator -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <nav class="nav-dots">
+        <button class="nav-dot active" data-section="0" aria-label="Apertura"></button>
+        <button class="nav-dot" data-section="1" aria-label="Intro"></button>
+        <button class="nav-dot" data-section="2" aria-label="Placenet"></button>
+        <button class="nav-dot" data-section="3" aria-label="Impacto"></button>
+        <button class="nav-dot" data-section="4" aria-label="Casos de Uso"></button>
+        <button class="nav-dot" data-section="5" aria-label="Cierre"></button>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Section 0: APERTURA -->
+        <section class="section section-apertura" data-section="0">
+            <div class="content-wrapper">
+                <div class="apertura-content">
+                    <h1 class="main-title fade-in">
+                        <span class="word">Iniciando</span>
+                        <span class="word">el</span>
+                        <span class="word highlight">sexto sentido</span>
+                    </h1>
+                </div>
+                <button class="continue-btn" data-next="1">
+                    <span>Comenzar</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="bg-gradient"></div>
+        </section>
+
+        <!-- Section 1: INTRO -->
+        <section class="section section-intro" data-section="1">
+            <div class="content-wrapper">
+                <div class="question-container">
+                    <h2 class="section-title">¿Recuerdas esas veces en las que un lugar te hizo sentir algo especial?</h2>
+
+                    <div class="reveal-cards">
+                        <div class="reveal-card" data-reveal="1">
+                            <button class="reveal-trigger">
+                                <span>Esa emoción que solo sucede cuando estás allí</span>
+                                <span class="plus-icon">+</span>
+                            </button>
+                            <div class="reveal-content">
+                                <ul class="emotion-list">
+                                    <li>Un estadio vibrando.</li>
+                                    <li>Una calle que cobra vida.</li>
+                                    <li>Un recinto que te envuelve.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="reveal-card" data-reveal="2">
+                            <button class="reveal-trigger">
+                                <span>¿Y si ese lugar pudiera reconocerte?</span>
+                                <span class="plus-icon">+</span>
+                            </button>
+                            <div class="reveal-content">
+                                <p class="reveal-text">¿Y si supiera que has llegado… y qué necesitas en ese mismo momento?</p>
+                            </div>
+                        </div>
+
+                        <div class="reveal-card" data-reveal="3">
+                            <button class="reveal-trigger">
+                                <span>¿Y si pudieras percibir todo eso directamente?</span>
+                                <span class="plus-icon">+</span>
+                            </button>
+                            <div class="reveal-content">
+                                <p class="reveal-text highlight-text">A través de tu sexto sentido</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="continue-btn" data-next="2">
+                    <span>Descubrir más</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Section 2: PLACENET -->
+        <section class="section section-placenet" data-section="2">
+            <div class="content-wrapper">
+                <div class="logo-container">
+                    <h1 class="brand-logo">PLACENET</h1>
+                </div>
+
+                <div class="placenet-content">
+                    <div class="info-block">
+                        <p class="large-text">En Placenet convertimos tu móvil en un <span class="highlight">sentido más</span>.</p>
+                    </div>
+
+                    <div class="interactive-blocks">
+                        <button class="info-card" data-card="1">
+                            <div class="card-header">
+                                <h3>Un portal hacia una nueva manera de ver el mundo</h3>
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Desde tu teléfono</li>
+                                    <li>A partir de todo lo digital</li>
+                                    <li>Conectado al lugar donde estás</li>
+                                </ul>
+                            </div>
+                        </button>
+
+                        <button class="info-card" data-card="2">
+                            <div class="card-header">
+                                <h3>Transformamos tu sexto sentido</h3>
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="card-body">
+                                <p>Conectamos lo digital con el espacio físico en función de quién eres y dónde te encuentras, creando <strong>comunidades digitales reales</strong> en torno a lugares concretos.</p>
+                            </div>
+                        </button>
+
+                        <button class="info-card" data-card="3">
+                            <div class="card-header">
+                                <h3>Una experiencia disruptiva y contextualizada</h3>
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="card-body">
+                                <p>Donde suceden cosas únicas en tu móvil a medida que te desplazas y avanzas por todas las etapas de tu journey.</p>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="cta-block">
+                        <p class="emphasis-text">Damos a los gestores de lugares una nueva capacidad: <br><strong>acompañar la experiencia física con una capa digital en tiempo real.</strong></p>
+                    </div>
+                </div>
+
+                <button class="continue-btn" data-next="3">
+                    <span>Ver el impacto</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Section 3: IMPACTO -->
+        <section class="section section-impacto" data-section="3">
+            <div class="content-wrapper">
+                <h2 class="section-title">Con Placenet se abren nuevas puertas</h2>
+                <p class="subtitle">Un océano lleno de oportunidades</p>
+
+                <div class="impact-grid">
+                    <div class="impact-item" data-impact="1">
+                        <div class="impact-icon">💼</div>
+                        <h3>Nuevas formas de impactar a sponsors</h3>
+                        <p>Activos digitales innovadores</p>
+                    </div>
+
+                    <div class="impact-item" data-impact="2">
+                        <div class="impact-icon">⚡</div>
+                        <h3>Nuevas maneras de activar engagement</h3>
+                        <p>Experiencias phygital únicas</p>
+                    </div>
+
+                    <div class="impact-item" data-impact="3">
+                        <div class="impact-icon">📊</div>
+                        <h3>Nuevas posibilidades de comprensión</h3>
+                        <p>Dónde está, por dónde se mueve, cómo actúa el visitante</p>
+                    </div>
+
+                    <div class="impact-item" data-impact="4">
+                        <div class="impact-icon">🤝</div>
+                        <h3>Nuevas maneras de conectar</h3>
+                        <p>Con y entre visitantes sin compartir datos personales</p>
+                    </div>
+                </div>
+
+                <button class="continue-btn" data-next="4">
+                    <span>Ver casos de uso</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Section 4: CASOS DE USO -->
+        <section class="section section-casos" data-section="4">
+            <div class="content-wrapper">
+                <h2 class="section-title">Somos algo distinto</h2>
+                <p class="subtitle">Ejemplos reales de lo que ya hemos hecho</p>
+
+                <div class="use-cases-grid">
+                    <div class="use-case-card" data-case="1">
+                        <div class="case-logo">
+                            <div class="logo-placeholder">F1</div>
+                        </div>
+                        <h3>F1 Fan Zone</h3>
+                        <p>Experiencia inmersiva para fans en circuitos</p>
+                        <button class="learn-more">Ver más detalles</button>
+                        <div class="case-details">
+                            <p>Aquí irá contenido multimedia y descripción detallada del caso F1 Fan Zone.</p>
+                        </div>
+                    </div>
+
+                    <div class="use-case-card" data-case="2">
+                        <div class="case-logo">
+                            <div class="logo-placeholder">RFEA</div>
+                        </div>
+                        <h3>RFEA</h3>
+                        <p>Federación Española de Atletismo</p>
+                        <button class="learn-more">Ver más detalles</button>
+                        <div class="case-details">
+                            <p>Aquí irá contenido multimedia y descripción detallada del caso RFEA.</p>
+                        </div>
+                    </div>
+
+                    <div class="use-case-card" data-case="3">
+                        <div class="case-logo">
+                            <div class="logo-placeholder">TdF</div>
+                        </div>
+                        <h3>Tour de France</h3>
+                        <p>Gestión logística de etapas</p>
+                        <button class="learn-more">Ver más detalles</button>
+                        <div class="case-details">
+                            <p>Aquí irá contenido multimedia y descripción detallada del Tour de France.</p>
+                        </div>
+                    </div>
+
+                    <div class="use-case-card" data-case="4">
+                        <div class="case-logo">
+                            <div class="logo-placeholder">IBE</div>
+                        </div>
+                        <h3>IBE - Can Felipa</h3>
+                        <p>Experiencia en espacios culturales</p>
+                        <button class="learn-more">Ver más detalles</button>
+                        <div class="case-details">
+                            <p>Aquí irá contenido multimedia y descripción detallada de IBE Can Felipa.</p>
+                        </div>
+                    </div>
+
+                    <div class="use-case-card" data-case="5">
+                        <div class="case-logo">
+                            <div class="logo-placeholder">🎾</div>
+                        </div>
+                        <h3>Inshape</h3>
+                        <p>Torneo internacional de tenis</p>
+                        <button class="learn-more">Ver más detalles</button>
+                        <div class="case-details">
+                            <p>Aquí irá contenido multimedia y descripción detallada del torneo Inshape.</p>
+                        </div>
+                    </div>
+
+                    <div class="use-case-card" data-case="6">
+                        <div class="case-logo">
+                            <div class="logo-placeholder">🏢</div>
+                        </div>
+                        <h3>Bourgeois</h3>
+                        <p>Comunidad en edificios</p>
+                        <button class="learn-more">Ver más detalles</button>
+                        <div class="case-details">
+                            <p>Aquí irá contenido multimedia y descripción detallada de Bourgeois.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="continue-btn" data-next="5">
+                    <span>Finalizar</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Section 5: CIERRE -->
+        <section class="section section-cierre" data-section="5">
+            <div class="content-wrapper">
+                <div class="closing-content">
+                    <h2 class="section-title">Estos son solo algunos ejemplos</h2>
+
+                    <div class="closing-message">
+                        <p class="large-text">Como tecnología, somos capaces de crear <span class="highlight">comunidades digitales reales</span> a través del sexto sentido de las personas.</p>
+                        <p class="large-text">De la forma que tú quieras diseñarlas. <br><strong>Como tú las imagines.</strong></p>
+                    </div>
+
+                    <div class="cta-container">
+                        <h3>Trabajemos juntos</h3>
+                        <p>No imagines una solución como las que ya conoces.</p>
+                        <p><strong>Cuéntanos qué quieres conseguir y qué quieres transformar</strong>, y lo resolveremos de una manera nueva, diferente y disruptiva.</p>
+
+                        <button class="primary-cta">
+                            <span>Imagina lo que podemos hacer por ti</span>
+                        </button>
+                    </div>
+
+                    <button class="restart-btn" data-next="0">
+                        <span>Volver al inicio</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
