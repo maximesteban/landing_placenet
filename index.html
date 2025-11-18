@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Placenet · Storytelling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#acto-resonancia">Saltar a la historia</a>
+    <main>
+      <section id="acto-inicial" class="section boot" aria-labelledby="boot-title">
+        <div class="boot__hud">
+          <p id="boot-title" class="eyebrow">Inicializando sexto sentido</p>
+          <div class="boot__rings" aria-hidden="true">
+            <div class="ring ring--outer"></div>
+            <div class="ring ring--middle"></div>
+            <div class="ring ring--inner"></div>
+            <div class="ring__core">
+              <p>6º</p>
+            </div>
+          </div>
+          <ul class="boot__log" aria-live="polite">
+            <li>Conectando senido digtal</li>
+          </ul>
+        </div>
+        <div class="boot__actions">
+          <button id="activateSense" class="hold-button" aria-pressed="false">
+            <span>Mantén para activar</span>
+            <span class="hold-button__progress" aria-hidden="true"></span>
+          </button>
+          <button id="skipBoot" class="ghost-link">Saltar animación</button>
+        </div>
+      </section>
+
+      <section
+        id="acto-resonancia"
+        class="section memory story-step"
+        aria-labelledby="memory-title"
+      >
+        <div class="section__content">
+          <div class="copy-stack">
+            <p class="eyebrow">Acto 1</p>
+            <h1 id="memory-title">
+              ¿Recuerdas esas veces en las que un lugar te hizo sentir algo
+              especial?
+            </h1>
+            <p>
+              Esa emoción que solo sucede cuando estás allí. En ese instante,
+              todo encaja. Tu sexto sentido despierta.
+            </p>
+          </div>
+          <div class="memory__canvas">
+            <div class="memory__parallax" aria-hidden="true">
+              <div class="parallax__layer parallax__layer--back"></div>
+              <div class="parallax__layer parallax__layer--mid"></div>
+              <div class="parallax__layer parallax__layer--front"></div>
+            </div>
+            <div class="prompt-stack" role="group" aria-label="Preguntas clave">
+              <button class="prompt-card">
+                ¿Y si ese lugar pudiera reconocerte?
+              </button>
+              <button class="prompt-card">
+                ¿Y si supiera que has llegado y qué necesitas?
+              </button>
+              <button class="prompt-card">
+                ¿Y si pudieras percibirlo a través de tu sexto sentido?
+              </button>
+            </div>
+          </div>
+          <div class="section__nav">
+            <button
+              class="next-scene"
+              data-target="acto-placenet"
+              aria-label="Continuar al siguiente acto"
+            >
+              Continuar viaje
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="acto-placenet"
+        class="section placenet story-step"
+        aria-labelledby="placenet-title"
+      >
+        <div class="section__content">
+          <div class="copy-stack">
+            <p class="eyebrow">Acto 2</p>
+            <h2 id="placenet-title">
+              Placenet convierte el móvil en el portal contextual más personal.
+            </h2>
+            <p>
+              Conectamos personas con lugares reales. Creamos comunidades
+              digitales que se nutren del momento, del espacio y de lo que
+              importa para ti.
+            </p>
+          </div>
+          <div class="placenet__map">
+            <nav aria-label="Capas de valor" class="layer-tabs">
+              <button class="layer-tab is-active" data-layer="contenido">
+                Contenido
+              </button>
+              <button class="layer-tab" data-layer="personas">Personas</button>
+              <button class="layer-tab" data-layer="servicios">Servicios</button>
+              <button class="layer-tab" data-layer="comunicaciones">
+                Comunicación
+              </button>
+            </nav>
+            <div class="map__viewport" aria-live="polite">
+              <p class="map__hint">
+                Explora cada capa para descubrir cómo personalizamos la
+                experiencia.
+              </p>
+              <ul class="map__nodes" id="mapNodes"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="section__nav">
+          <button
+            class="next-scene"
+            data-target="acto-impacto"
+            aria-label="Ir al impacto"
+          >
+            Ver impacto
+          </button>
+        </div>
+      </section>
+
+      <section
+        id="acto-impacto"
+        class="section impact story-step"
+        aria-labelledby="impact-title"
+      >
+        <div class="section__content split">
+          <div class="impact__panel impact__panel--visitor">
+            <div class="copy-stack">
+              <p class="eyebrow">Visitantes</p>
+              <h3 id="impact-title">
+                Experiencias disruptivas en cada etapa del journey.
+              </h3>
+              <p>
+                Lo que sucede en tu móvil cambia según dónde estás. Placenet te
+                guía, te sorprende y te conecta con momentos irrepetibles.
+              </p>
+            </div>
+            <div class="journey">
+              <div class="journey__step is-active">
+                <p>Ingreso</p>
+                <span>Bienvenida contextual</span>
+              </div>
+              <div class="journey__step">
+                <p>Exploración</p>
+                <span>Micro experiencias</span>
+              </div>
+              <div class="journey__step">
+                <p>Activación</p>
+                <span>Retos y recompensas</span>
+              </div>
+              <div class="journey__step">
+                <p>Post visita</p>
+                <span>Recuerdos y comunidad</span>
+              </div>
+            </div>
+          </div>
+          <div class="impact__panel impact__panel--manager">
+            <div class="copy-stack">
+              <p class="eyebrow">Gestores</p>
+              <h3>Acompaña y entiende en tiempo real.</h3>
+              <p>
+                Observa flujos, activa contenidos y conecta a visitantes sin
+                comprometer sus datos personales. Todo desde un mismo panel.
+              </p>
+            </div>
+            <div class="dashboard">
+              <div class="dashboard__metric">
+                <span>Oportunidades para sponsors</span>
+                <strong>+34%</strong>
+              </div>
+              <div class="dashboard__metric">
+                <span>Activaciones phygital</span>
+                <strong>18 en vivo</strong>
+              </div>
+              <div class="dashboard__metric">
+                <span>Movimiento en tiempo real</span>
+                <strong>143 visitantes</strong>
+              </div>
+              <div class="dashboard__metric">
+                <span>Conexiones seguras</span>
+                <strong>100% sin datos personales</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="opportunity-carousel" aria-label="Oportunidades">
+          <div class="carousel__track" id="opportunityTrack"></div>
+        </div>
+        <div class="section__nav">
+          <button
+            class="next-scene"
+            data-target="acto-evidencia"
+            aria-label="Explorar casos reales"
+          >
+            Ver casos reales
+          </button>
+        </div>
+      </section>
+
+      <section
+        id="acto-evidencia"
+        class="section cases story-step"
+        aria-labelledby="cases-title"
+      >
+        <div class="section__content">
+          <div class="copy-stack">
+            <p class="eyebrow">Acto 4</p>
+            <h2 id="cases-title">
+              Somos distintos. Mira cómo ya activamos este universo.
+            </h2>
+            <p>
+              Casos reales, comunidades reales. Cada logo es una puerta hacia
+              un sexto sentido en acción.
+            </p>
+          </div>
+          <div class="case-grid" id="caseGrid" role="list"></div>
+        </div>
+        <div class="section__nav">
+          <button
+            class="next-scene"
+            data-target="acto-cierre"
+            aria-label="Pasar al cierre"
+          >
+            Ir al cierre
+          </button>
+        </div>
+      </section>
+
+      <section
+        id="acto-cierre"
+        class="section closing story-step"
+        aria-labelledby="closing-title"
+      >
+        <div class="section__content">
+          <div class="copy-stack">
+            <p class="eyebrow">Acto final</p>
+            <h2 id="closing-title">Imagina lo que podemos crear juntos.</h2>
+            <p>
+              Estos son solo algunos ejemplos. Diseñemos comunidades digitales
+              tan auténticas como lo que sueñas transformar.
+            </p>
+          </div>
+          <form class="co-create-form" aria-label="Compártenos tu visión">
+            <label for="goalInput">¿Qué quieres conseguir?</label>
+            <input
+              id="goalInput"
+              type="text"
+              placeholder="Fidelizar, monetizar, sorprender…"
+            />
+            <label for="transformationSelect">
+              ¿Qué quieres transformar?
+            </label>
+            <select id="transformationSelect">
+              <option value="experiencias">Experiencias en vivo</option>
+              <option value="community">Comunidades internas</option>
+              <option value="sponsors">
+                Sponsorships y activaciones
+              </option>
+              <option value="datos">
+                Inteligencia del comportamiento
+              </option>
+            </select>
+            <div class="form__actions">
+              <button type="submit" class="primary">Hablemos</button>
+              <button type="button" class="ghost">
+                Agenda un laboratorio
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="script.js" defer></script>
+  </body>
+</html>
