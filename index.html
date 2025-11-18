@@ -14,6 +14,10 @@
   </head>
   <body>
     <a class="skip-link" href="#acto-resonancia">Saltar a la historia</a>
+    <div class="interaction-hint" role="note">
+      <span class="interaction-hint__pulse" aria-hidden="true"></span>
+      Pulsa los botones interactivos para descubrir más contenido.
+    </div>
     <main>
       <section id="acto-inicial" class="section boot" aria-labelledby="boot-title">
         <div class="boot__inner">
@@ -49,15 +53,12 @@
       >
         <div class="section__content">
           <div class="copy-stack">
-            <p class="eyebrow">Acto 1</p>
             <h1 id="memory-title">
               ¿Recuerdas esas veces en las que un lugar te hizo sentir algo
               especial?
             </h1>
-            <p>
-              Esa emoción que solo sucede cuando estás allí. En ese instante,
-              todo encaja. Tu sexto sentido despierta.
-            </p>
+            <h2>
+              Esa emoción que solo sucede <u>cuando estás allí.</u>
           </div>
           <div class="memory__canvas">
             <div class="memory__parallax" aria-hidden="true">
@@ -84,15 +85,15 @@
               aria-label="Volver al bloque anterior"
             >
               Volver
-            </button>
+            </button> 
             <button
               type="button"
               class="nav-button nav-button--primary next-scene"
               data-target="acto-placenet"
               aria-label="Continuar al siguiente acto"
             >
-              Continuar viaje
-            </button>
+              Saber más
+            </button> 
           </div>
         </div>
       </section>
@@ -103,35 +104,46 @@
         aria-labelledby="placenet-title"
       >
         <div class="section__content">
-          <div class="copy-stack">
-            <p class="eyebrow">Acto 2</p>
-            <h2 id="placenet-title">
-              Placenet convierte el móvil en el portal contextual más personal.
+          <div class="copy-stack-placenet">
+            <h1 id="placenet-title">
+              Placenet usa el sentido digital.<br>Una manera completamente nueva de ver el mundo.
+            </h1>
+            <h2>
+              Conectamos personas y lugares.<br>Creamos comunidades digitales centradas en lugares físicos.
             </h2>
-            <p>
-              Conectamos personas con lugares reales. Creamos comunidades
-              digitales que se nutren del momento, del espacio y de lo que
-              importa para ti.
-            </p>
           </div>
-          <div class="placenet__map">
+          <div class="placenet__layout">
+            <div class="placenet__device" aria-hidden="true">
+              <div class="device__frame">
+                <div class="device__screen">
+                  <div class="screen__glow"></div>
+                  <div class="screen__signal"></div>
+                </div>
+                <div class="device__portal"></div>
+              </div>
+              <p class="device__caption">Tu 6º sentido</p>
+            </div>
+            <div class="placenet__map">
             <nav aria-label="Capas de valor" class="layer-tabs">
               <button class="layer-tab is-active" data-layer="contenido">
-                Contenido
+                Contenidos
               </button>
               <button class="layer-tab" data-layer="personas">Personas</button>
               <button class="layer-tab" data-layer="servicios">Servicios</button>
               <button class="layer-tab" data-layer="comunicaciones">
-                Comunicación
+                Comunicaciones
+              </button>
+              <button class="layer-tab" data-layer="funcionalidades">
+                Funcionalidades
               </button>
             </nav>
             <div class="map__viewport" aria-live="polite">
               <p class="map__hint">
-                Explora cada capa para descubrir cómo personalizamos la
-                experiencia.
+                Conectamos cualquier elemento digital de forma  contextualizada y personalizada.
               </p>
               <ul class="map__nodes" id="mapNodes"></ul>
             </div>
+          </div>
           </div>
         </div>
         <div class="section__nav">
@@ -159,6 +171,33 @@
         aria-labelledby="impact-title"
       >
         <div class="section__content impact__content">
+          <div class="impact__aura" aria-hidden="true">
+            <span class="impact__orb impact__orb--one"></span>
+            <span class="impact__orb impact__orb--two"></span>
+            <span class="impact__orb impact__orb--three"></span>
+          </div>
+          <div class="impact__intro">
+            <div class="impact__hero">
+              <p class="eyebrow">Impacto vivo</p>
+              <h2>
+                Con Placenet se abren nuevas puertas.<br />
+                Nuevos activos digitales.<br />
+                Un oc&eacute;ano lleno de oportunidades.
+              </h2>
+            </div>
+            <div class="impact__statements" role="list" aria-label="Posibilidades expandidas">
+              <span class="impact__statement" role="listitem">Nuevas formas de impactar a sponsors.</span>
+              <span class="impact__statement" role="listitem">Nuevas maneras de activar engagement.</span>
+              <span class="impact__statement" role="listitem">Nuevas experiencias phygital.</span>
+              <span class="impact__statement" role="listitem">
+                Nuevas posibilidades para comprender el comportamiento del visitante: d&oacute;nde est&aacute;, por d&oacute;nde se mueve, c&oacute;mo act&uacute;a.
+              </span>
+              <span class="impact__statement" role="listitem">
+                Nuevas maneras de conectar con y entre visitantes sin compartir datos personales.
+              </span>
+            </div>
+            
+          </div>
           <div class="impact__panels">
             <div class="impact__panel impact__panel--visitor">
               <div class="copy-stack">
@@ -167,8 +206,7 @@
                   Experiencias disruptivas en cada etapa del journey.
                 </h3>
                 <p>
-                  Lo que sucede en tu móvil cambia según dónde estás. Placenet te
-                  guía, te sorprende y te conecta con momentos irrepetibles.
+                  Lo que sucede en tu móvil cambia según dónde estás.
                 </p>
               </div>
               <div class="journey">
@@ -193,11 +231,7 @@
             <div class="impact__panel impact__panel--manager">
               <div class="copy-stack">
                 <p class="eyebrow">Gestores</p>
-                <h3>Acompaña y entiende en tiempo real.</h3>
-                <p>
-                  Observa flujos, activa contenidos y conecta a visitantes sin
-                  comprometer sus datos personales. Todo desde un mismo panel.
-                </p>
+                <h3>Acompaña, crea y entiende en tiempo real.</h3>
               </div>
               <div class="dashboard">
                 <div class="dashboard__metric">
@@ -220,7 +254,7 @@
             </div>
           </div>
           <div class="impact__bottom">
-            <div class="opportunity-carousel" aria-label="Oportunidades">
+            
               <div class="carousel__track" id="opportunityTrack"></div>
             </div>
             <div class="section__nav">
@@ -251,7 +285,6 @@
       >
         <div class="section__content">
           <div class="copy-stack">
-            <p class="eyebrow">Acto 4</p>
             <h2 id="cases-title">
               Somos distintos. Mira cómo ya activamos este universo.
             </h2>
@@ -288,7 +321,6 @@
       >
         <div class="section__content">
           <div class="copy-stack">
-            <p class="eyebrow">Acto final</p>
             <h2 id="closing-title">Imagina lo que podemos crear juntos.</h2>
             <p>
               Estos son solo algunos ejemplos. Diseñemos comunidades digitales

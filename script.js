@@ -106,44 +106,44 @@ promptCards.forEach((card) => {
 
 const layerData = {
   contenido: [
-    {
-      title: "Menús y catálogos dinámicos",
-      detail: "Cada entrada entrega lo relevante del lugar.",
-    },
-    {
-      title: "Historias del espacio",
-      detail: "Relatos inmersivos según la zona en la que estás.",
-    },
+    "Información en tiempo real",
+    "Micrositios y landings contextuales",
+    "Contenido web",
+    "Multimedia y streaming",
+    "Historias, playlists, podcasts, etc.",
+    "+ todo lo que te imagines",
   ],
   personas: [
-    {
-      title: "Quien está aquí ahora",
-      detail: "Conecta con perfiles afines sin exponer datos.",
-    },
-    {
-      title: "Comunidades vivas",
-      detail: "Activa grupos temporales según intereses.",
-    },
+    "Smart-Networking",
+    "Chats sin datos personales",
+    "Comunidades vivas y por intereses",
+    "Contacto guiado",
+    "Socialización y dinamización por roles",
+    "+ todo lo que te imagines",
   ],
   servicios: [
-    {
-      title: "Servicios on demand",
-      detail: "Reserva, pide o recibe asistencia desde tu móvil.",
-    },
-    {
-      title: "Rutinas guiadas",
-      detail: "El espacio te acompaña durante todo tu journey.",
-    },
+    "Reservas de espacios",
+    "Turnos, colas virtuales y check-in",
+    "Soporte y asistencia en sitio desde el móvil",
+    "Recordatorios de servicios",
+    "Concierge digital y experiencias",
+    "+ todo lo que te imagines",
   ],
   comunicaciones: [
-    {
-      title: "Alertas y señales contextuales",
-      detail: "Notificaciones que solo aparecen si son relevantes.",
-    },
-    {
-      title: "Conversaciones bidireccionales",
-      detail: "Los lugares también responden.",
-    },
+    "Avisos contextuales según ubicación",
+    "Alertas en tiempo real",
+    "Notificaciones prsonalizadas",
+    "Mensajes segmentados",
+    "Panel de alertas y comunicaciones",
+    "+ todo lo que te imagines",
+  ],
+  funcionalidades: [
+    "Control horario",
+    "Pasarelas de pago integradas",
+    "Asistentes IA",
+    "Apertura y control remoto de puertas",
+    "Automatizaciones y workflows conectados",
+    "+ todo lo que te imagines",
   ],
 };
 
@@ -153,10 +153,10 @@ const mapNodes = document.getElementById("mapNodes");
 function renderLayer(layer) {
   if (!mapNodes) return;
   mapNodes.innerHTML = "";
-  layerData[layer].forEach((item) => {
+  layerData[layer].forEach((tag) => {
     const li = document.createElement("li");
-    li.className = "map__node";
-    li.innerHTML = `<strong>${item.title}</strong><span>${item.detail}</span>`;
+    li.className = "map__pill";
+    li.textContent = tag;
     mapNodes.appendChild(li);
   });
 }
@@ -214,29 +214,7 @@ function updateNavControls() {
 
 updateNavControls();
 
-const opportunityTrack = document.getElementById("opportunityTrack");
-const opportunities = [
-  {
-    title: "Sponsors",
-    detail: "Impactos hipercontextuales sin saturar al visitante.",
-  },
-  {
-    title: "Engagement",
-    detail: "Retos, recompensas y dinámicas que nacen del lugar.",
-  },
-  {
-    title: "Experiencias phygital",
-    detail: "Loops físicos + digitales sincronizados.",
-  },
-  {
-    title: "Insights",
-    detail: "Movimiento y comportamiento sin datos personales.",
-  },
-  {
-    title: "Conexiones",
-    detail: "Redes entre visitantes y con el espacio.",
-  },
-];
+
 
 if (opportunityTrack) {
   [...opportunities, ...opportunities].forEach((op) => {
