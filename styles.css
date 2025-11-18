@@ -709,12 +709,29 @@ main {
 }
 
 @media (max-width: 640px) {
-  .section::after {
-    inset: 0.5rem;
+  html,
+  body {
+    min-height: auto;
+    height: auto;
+  }
+
+  main {
+    gap: 1.5rem;
+    padding-bottom: 2rem;
   }
 
   .section {
     min-height: auto;
+    padding: 2rem 1.25rem;
+    display: block;
+  }
+
+  .section.story-step {
+    display: none;
+  }
+
+  .section.story-step.is-active {
+    display: block;
   }
 
   .hold-button {
@@ -734,10 +751,21 @@ main {
 
   .boot__inner {
     width: 100%;
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 
   .boot__rings {
     margin-inline: auto;
+  }
+
+  .impact__panels {
+    grid-template-columns: 1fr;
+  }
+
+  .section__nav {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 
