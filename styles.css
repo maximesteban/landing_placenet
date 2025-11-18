@@ -13,6 +13,10 @@
   font-family: "Rethink Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+html {
+  height: 100%;
+}
+
 *,
 *::before,
 *::after {
@@ -22,6 +26,9 @@
 body {
   margin: 0;
   min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background: var(--bg);
   color: var(--text);
   font-size: clamp(16px, 1.1vw, 18px);
@@ -87,7 +94,10 @@ h3 {
 main {
   display: flex;
   flex-direction: column;
-  gap: 10vh;
+  gap: 0;
+  padding: 0;
+  flex: 1;
+  min-height: 100vh;
 }
 
 .story-step {
@@ -98,15 +108,26 @@ main {
 }
 
 .story-step.is-active {
-  display: block;
+  display: flex;
   opacity: 1;
   transform: none;
 }
 
 .section {
   position: relative;
-  padding: clamp(3rem, 8vh, 7rem) clamp(1.5rem, 6vw, 6rem);
+  padding: clamp(2.5rem, 6vh, 6rem) clamp(1.5rem, 6vw, 6rem);
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.section.story-step {
+  display: none;
+}
+
+.section.story-step.is-active {
+  display: flex;
 }
 
 .section::after {
@@ -124,6 +145,50 @@ main {
   flex-direction: column;
   gap: 2rem;
   z-index: 1;
+  width: min(1100px, 95%);
+  margin: 0 auto;
+}
+
+.section__nav {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  border-radius: 999px;
+  padding: 0.8rem 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.nav-button--primary {
+  border-color: var(--accent);
+  box-shadow: 0 0 25px rgba(78, 242, 255, 0.3);
+}
+
+.nav-button:hover,
+.nav-button:focus-visible {
+  border-color: var(--accent);
+  color: #020305;
+  background: var(--accent);
+}
+
+.nav-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.nav-button--primary:disabled {
+  box-shadow: none;
 }
 
 .copy-stack {
@@ -139,23 +204,49 @@ main {
 }
 
 .boot {
-  min-height: 90vh;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  min-height: 100vh;
+  display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.brand-mark img {
+  max-width: 140px;
+  height: auto;
+  display: block;
+}
+
+.boot__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  width: min(1100px, 95%);
+  margin: 0 auto;
 }
 
 .boot__hud {
   display: grid;
   gap: 1rem;
+  text-align: left;
+  justify-items: start;
 }
 
 .boot__rings {
   position: relative;
   width: clamp(220px, 35vw, 320px);
   aspect-ratio: 1;
-  margin-inline: auto;
+  margin-inline: 0;
 }
 
 .ring {
@@ -208,8 +299,10 @@ main {
 .boot__actions {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
+  justify-self: center;
+  text-align: center;
 }
 
 .hold-button {
@@ -242,7 +335,7 @@ main {
 }
 
 .memory {
-  background: linear-gradient(135deg, rgba(5, 6, 11, 0.9), rgba(8, 11, 25, 0.9));
+  background: #000122;
 }
 
 .memory__canvas {
@@ -388,10 +481,20 @@ main {
   font-size: 0.85rem;
 }
 
-.impact .split {
+.impact__content {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.impact__panels {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  min-height: 0;
 }
 
 .impact__panel {
@@ -399,14 +502,18 @@ main {
   border-radius: 1.5rem;
   padding: 1.5rem;
   border: 1px solid var(--border);
-  min-height: 360px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+  min-height: 0;
 }
 
 .journey {
   display: grid;
   gap: 0.8rem;
+  flex: 1;
+  overflow: auto;
+  padding-right: 0.5rem;
 }
 
 .journey__step {
@@ -427,8 +534,11 @@ main {
 
 .dashboard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;
+  flex: 1;
+  overflow: auto;
+  padding-right: 0.5rem;
 }
 
 .dashboard__metric {
@@ -450,12 +560,17 @@ main {
 }
 
 .opportunity-carousel {
-  margin-top: 2rem;
   overflow: hidden;
 }
 
 .carousel__track {
   display: flex;
+  gap: 1rem;
+}
+
+.impact__bottom {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
 
@@ -473,7 +588,7 @@ main {
 }
 
 .cases {
-  background: linear-gradient(180deg, rgba(8, 11, 25, 0.95), rgba(4, 6, 11, 0.95));
+  background: #000122;
 }
 
 .case-grid {
@@ -563,6 +678,10 @@ main {
     inset: 0.5rem;
   }
 
+  .section {
+    min-height: auto;
+  }
+
   .hold-button {
     width: 180px;
     height: 180px;
@@ -576,6 +695,14 @@ main {
   .ghost {
     width: 100%;
     text-align: center;
+  }
+
+  .boot__inner {
+    width: 100%;
+  }
+
+  .boot__rings {
+    margin-inline: auto;
   }
 }
 

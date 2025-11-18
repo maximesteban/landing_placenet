@@ -7,8 +7,10 @@ const bootMessages = [
 const bootLog = document.querySelector(".boot__log");
 const holdButton = document.getElementById("activateSense");
 const skipButton = document.getElementById("skipBoot");
+const audioToggle = document.getElementById("audioToggle");
 const storySteps = Array.from(document.querySelectorAll(".story-step"));
 const nextSceneButtons = document.querySelectorAll(".next-scene");
+const prevSceneButtons = document.querySelectorAll(".prev-scene");
 let logIndex = 0;
 let holdTimer;
 const prefersReducedMotion = window.matchMedia(
@@ -50,6 +52,7 @@ function setActiveScene(index) {
     }
   });
   currentSceneIndex = safeIndex;
+  updateNavControls();
 }
 
 function completeBoot() {
@@ -85,6 +88,12 @@ holdButton?.addEventListener("keydown", (event) => {
 holdButton?.addEventListener("keyup", cancelHold);
 
 skipButton?.addEventListener("click", completeBoot);
+
+audioToggle?.addEventListener("click", () => {
+  const pressed = audioToggle.getAttribute("aria-pressed") === "true";
+  audioToggle.setAttribute("aria-pressed", String(!pressed));
+  audioToggle.textContent = pressed ? "Activar audio ambiente" : "Audio silenciado";
+});
 
 
 
@@ -175,6 +184,35 @@ nextSceneButtons.forEach((button) => {
     }
   });
 });
+
+prevSceneButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetId = button.dataset.target;
+    if (targetId) {
+      const targetIndex = storySteps.findIndex((section) => section.id === targetId);
+      if (targetIndex !== -1) {
+        setActiveScene(targetIndex);
+      }
+    } else {
+      setActiveScene(currentSceneIndex - 1);
+    }
+  });
+});
+
+function updateNavControls() {
+  storySteps.forEach((section, idx) => {
+    const prev = section.querySelector(".prev-scene");
+    if (prev) {
+      prev.disabled = idx === 0;
+    }
+    const next = section.querySelector(".next-scene");
+    if (next) {
+      next.disabled = idx === storySteps.length - 1;
+    }
+  });
+}
+
+updateNavControls();
 
 const opportunityTrack = document.getElementById("opportunityTrack");
 const opportunities = [

@@ -16,26 +16,36 @@
     <a class="skip-link" href="#acto-resonancia">Saltar a la historia</a>
     <main>
       <section id="acto-inicial" class="section boot" aria-labelledby="boot-title">
-        <div class="boot__hud">
-          <p id="boot-title" class="eyebrow">Inicializando sexto sentido</p>
-          <div class="boot__rings" aria-hidden="true">
-            <div class="ring ring--outer"></div>
-            <div class="ring ring--middle"></div>
-            <div class="ring ring--inner"></div>
-            <div class="ring__core">
-              <p>6º</p>
+        <div class="boot__inner">
+          <div class="boot__hud">
+            <div class="brand-mark" aria-label="Placenet">
+              <img src="assets/img/marca white.png" alt="logo Placenet" />
             </div>
+            <p id="boot-title" class="eyebrow">Inicializando sexto sentido</p>
+            <div class="boot__rings" aria-hidden="true">
+              <div class="ring ring--outer"></div>
+              <div class="ring ring--middle"></div>
+              <div class="ring ring--inner"></div>
+              <div class="ring__core">
+                <p>6º</p>
+              </div>
+            </div>
+            <ul class="boot__log" aria-live="polite">
+              <li>Preparando sensores contextuales…</li>
+            </ul>
           </div>
-          <ul class="boot__log" aria-live="polite">
-            <li>Conectando senido digtal</li>
-          </ul>
-        </div>
-        <div class="boot__actions">
-          <button id="activateSense" class="hold-button" aria-pressed="false">
-            <span>Mantén para activar</span>
-            <span class="hold-button__progress" aria-hidden="true"></span>
-          </button>
-          <button id="skipBoot" class="ghost-link">Saltar animación</button>
+          <div class="boot__actions">
+            <button id="activateSense" class="hold-button" aria-pressed="false">
+              <span>Mantén para activar</span>
+              <span class="hold-button__progress" aria-hidden="true"></span>
+            </button>
+            <button id="skipBoot" class="ghost-link" type="button">
+              Saltar animación
+            </button>
+            <button id="audioToggle" class="ghost-link" type="button" aria-pressed="false">
+              Mutear/Activar audio ambiente
+            </button>
+          </div>
         </div>
       </section>
 
@@ -76,7 +86,15 @@
           </div>
           <div class="section__nav">
             <button
-              class="next-scene"
+              type="button"
+              class="nav-button prev-scene"
+              aria-label="Volver al bloque anterior"
+            >
+              Volver
+            </button>
+            <button
+              type="button"
+              class="nav-button nav-button--primary next-scene"
               data-target="acto-placenet"
               aria-label="Continuar al siguiente acto"
             >
@@ -125,7 +143,15 @@
         </div>
         <div class="section__nav">
           <button
-            class="next-scene"
+            type="button"
+            class="nav-button prev-scene"
+            aria-label="Volver al acto anterior"
+          >
+            Volver
+          </button>
+          <button
+            type="button"
+            class="nav-button nav-button--primary next-scene"
             data-target="acto-impacto"
             aria-label="Ir al impacto"
           >
@@ -139,77 +165,89 @@
         class="section impact story-step"
         aria-labelledby="impact-title"
       >
-        <div class="section__content split">
-          <div class="impact__panel impact__panel--visitor">
-            <div class="copy-stack">
-              <p class="eyebrow">Visitantes</p>
-              <h3 id="impact-title">
-                Experiencias disruptivas en cada etapa del journey.
-              </h3>
-              <p>
-                Lo que sucede en tu móvil cambia según dónde estás. Placenet te
-                guía, te sorprende y te conecta con momentos irrepetibles.
-              </p>
+        <div class="section__content impact__content">
+          <div class="impact__panels">
+            <div class="impact__panel impact__panel--visitor">
+              <div class="copy-stack">
+                <p class="eyebrow">Visitantes</p>
+                <h3 id="impact-title">
+                  Experiencias disruptivas en cada etapa del journey.
+                </h3>
+                <p>
+                  Lo que sucede en tu móvil cambia según dónde estás. Placenet te
+                  guía, te sorprende y te conecta con momentos irrepetibles.
+                </p>
+              </div>
+              <div class="journey">
+                <div class="journey__step is-active">
+                  <p>Ingreso</p>
+                  <span>Bienvenida contextual</span>
+                </div>
+                <div class="journey__step">
+                  <p>Exploración</p>
+                  <span>Micro experiencias</span>
+                </div>
+                <div class="journey__step">
+                  <p>Activación</p>
+                  <span>Retos y recompensas</span>
+                </div>
+                <div class="journey__step">
+                  <p>Post visita</p>
+                  <span>Recuerdos y comunidad</span>
+                </div>
+              </div>
             </div>
-            <div class="journey">
-              <div class="journey__step is-active">
-                <p>Ingreso</p>
-                <span>Bienvenida contextual</span>
+            <div class="impact__panel impact__panel--manager">
+              <div class="copy-stack">
+                <p class="eyebrow">Gestores</p>
+                <h3>Acompaña y entiende en tiempo real.</h3>
+                <p>
+                  Observa flujos, activa contenidos y conecta a visitantes sin
+                  comprometer sus datos personales. Todo desde un mismo panel.
+                </p>
               </div>
-              <div class="journey__step">
-                <p>Exploración</p>
-                <span>Micro experiencias</span>
-              </div>
-              <div class="journey__step">
-                <p>Activación</p>
-                <span>Retos y recompensas</span>
-              </div>
-              <div class="journey__step">
-                <p>Post visita</p>
-                <span>Recuerdos y comunidad</span>
+              <div class="dashboard">
+                <div class="dashboard__metric">
+                  <span>Oportunidades para sponsors</span>
+                  <strong>+34%</strong>
+                </div>
+                <div class="dashboard__metric">
+                  <span>Activaciones phygital</span>
+                  <strong>18 en vivo</strong>
+                </div>
+                <div class="dashboard__metric">
+                  <span>Movimiento en tiempo real</span>
+                  <strong>143 visitantes</strong>
+                </div>
+                <div class="dashboard__metric">
+                  <span>Conexiones seguras</span>
+                  <strong>100% sin datos personales</strong>
+                </div>
               </div>
             </div>
           </div>
-          <div class="impact__panel impact__panel--manager">
-            <div class="copy-stack">
-              <p class="eyebrow">Gestores</p>
-              <h3>Acompaña y entiende en tiempo real.</h3>
-              <p>
-                Observa flujos, activa contenidos y conecta a visitantes sin
-                comprometer sus datos personales. Todo desde un mismo panel.
-              </p>
+          <div class="impact__bottom">
+            <div class="opportunity-carousel" aria-label="Oportunidades">
+              <div class="carousel__track" id="opportunityTrack"></div>
             </div>
-            <div class="dashboard">
-              <div class="dashboard__metric">
-                <span>Oportunidades para sponsors</span>
-                <strong>+34%</strong>
-              </div>
-              <div class="dashboard__metric">
-                <span>Activaciones phygital</span>
-                <strong>18 en vivo</strong>
-              </div>
-              <div class="dashboard__metric">
-                <span>Movimiento en tiempo real</span>
-                <strong>143 visitantes</strong>
-              </div>
-              <div class="dashboard__metric">
-                <span>Conexiones seguras</span>
-                <strong>100% sin datos personales</strong>
-              </div>
+            <div class="section__nav">
+              <button
+                type="button"
+                class="nav-button prev-scene"
+                aria-label="Volver al acto anterior"
+              >
+                Volver
+              </button>
+              <button
+                type="button"
+                class="nav-button nav-button--primary next-scene"
+                data-target="acto-evidencia"
+                aria-label="Explorar casos reales"
+              >
+                Ver casos reales
+              </button>
             </div>
           </div>
-        </div>
-        <div class="opportunity-carousel" aria-label="Oportunidades">
-          <div class="carousel__track" id="opportunityTrack"></div>
-        </div>
-        <div class="section__nav">
-          <button
-            class="next-scene"
-            data-target="acto-evidencia"
-            aria-label="Explorar casos reales"
-          >
-            Ver casos reales
-          </button>
         </div>
       </section>
 
@@ -233,7 +271,15 @@
         </div>
         <div class="section__nav">
           <button
-            class="next-scene"
+            type="button"
+            class="nav-button prev-scene"
+            aria-label="Volver al acto anterior"
+          >
+            Volver
+          </button>
+          <button
+            type="button"
+            class="nav-button nav-button--primary next-scene"
             data-target="acto-cierre"
             aria-label="Pasar al cierre"
           >
@@ -283,6 +329,15 @@
               </button>
             </div>
           </form>
+          <div class="section__nav">
+            <button
+              type="button"
+              class="nav-button prev-scene"
+              aria-label="Volver a los casos reales"
+            >
+              Volver
+            </button>
+          </div>
         </div>
       </section>
     </main>
