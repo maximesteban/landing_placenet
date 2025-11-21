@@ -16,7 +16,7 @@
     <a class="skip-link" href="#acto-resonancia">Saltar a la historia</a>
     <div class="interaction-hint" role="note">
       <span class="interaction-hint__pulse" aria-hidden="true"></span>
-      Pulsa los botones interactivos para descubrir más contenido.
+      Botones interactivos
     </div>
     <main>
       <section id="acto-inicial" class="section boot" aria-labelledby="boot-title">
@@ -218,57 +218,65 @@
             <div class="impact__panel impact__panel--visitor">
               <div class="copy-stack">
                 <p class="eyebrow">Visitantes</p>
-                <h3 id="impact-title">
-                  Experiencias disruptivas en cada etapa del journey.
-                </h3>
-                <p>
-                  Lo que sucede en tu móvil cambia según dónde estás.
-                </p>
+              <h3 id="impact-title">
+                Experiencias disruptivas en cada etapa del journey.
+              </h3>
+              <p>
+                Lo que sucede en tu móvil cambia según dónde estás.
+              </p>
+            </div>
+            <div class="journey">
+              <div class="journey__step is-active">
+                <p>Contenidos vivos</p>
+                <span>Micrositios y experiencias patrocinables justo al entrar.</span>
               </div>
-              <div class="journey">
-                <div class="journey__step is-active">
-                  <p>Ingreso</p>
-                  <span>Bienvenida contextual</span>
+              <div class="journey__step">
+                  <p>Comunicaciones</p>
+                  <span>Alertas y retos contextualizados sin pedir datos personales.</span>
                 </div>
                 <div class="journey__step">
-                  <p>Exploración</p>
-                  <span>Micro experiencias</span>
+                  <p>Servicios</p>
+                  <span>Check-in invisible, colas inteligentes y reservas al instante.</span>
                 </div>
-                <div class="journey__step">
-                  <p>Activación</p>
-                  <span>Retos y recompensas</span>
-                </div>
-                <div class="journey__step">
-                  <p>Post visita</p>
-                  <span>Recuerdos y comunidad</span>
-                </div>
+              <div class="journey__step">
+                <p>Engagement phygital</p>
+                <span>Recompensas, comunidad y recuerdos activados en sitio.</span>
               </div>
             </div>
-            <div class="impact__panel impact__panel--manager">
-              <div class="copy-stack">
-                <p class="eyebrow">Gestores</p>
-                <h3>Acompaña, crea y entiende en tiempo real.</h3>
+            <div class="slider-nav">
+              <button class="slider-button journey-prev" aria-label="Paso anterior">‹</button>
+              <button class="slider-button journey-next" aria-label="Paso siguiente">›</button>
+            </div>
+          </div>
+          <div class="impact__panel impact__panel--manager">
+            <div class="copy-stack">
+              <p class="eyebrow">Gestores</p>
+              <h3>Acompaña, crea y entiende en tiempo real.</h3>
               </div>
               <div class="dashboard">
                 <div class="dashboard__metric">
-                  <span>Oportunidades para sponsors</span>
-                  <strong>+34%</strong>
+                  <p>Contenidos y patrocinios</p>
+                  <span>Activa piezas patrocinadas y mide la interacción en vivo.</span>
                 </div>
                 <div class="dashboard__metric">
-                  <span>Activaciones phygital</span>
-                  <strong>18 en vivo</strong>
+                  <p>Engagement en vivo</p>
+                  <span>Retos, recompensas y quests phygital siempre visibles.</span>
                 </div>
                 <div class="dashboard__metric">
-                  <span>Movimiento en tiempo real</span>
-                  <strong>143 visitantes</strong>
+                  <p>Comportamiento seguro</p>
+                  <span>Mapa anónimo en tiempo real sin datos personales.</span>
                 </div>
-                <div class="dashboard__metric">
-                  <span>Conexiones seguras</span>
-                  <strong>100% sin datos personales</strong>
-                </div>
+              <div class="dashboard__metric">
+                <p>Servicios conectados</p>
+                <span>Reservas, colas y check-in automático en un panel único.</span>
               </div>
             </div>
+            <div class="slider-nav">
+              <button class="slider-button dashboard-prev" aria-label="Métrica anterior">‹</button>
+              <button class="slider-button dashboard-next" aria-label="Métrica siguiente">›</button>
+            </div>
           </div>
+        </div>
           <div class="impact__bottom">
             
               <div class="carousel__track" id="opportunityTrack"></div>
@@ -302,14 +310,12 @@
         <div class="section__content">
           <div class="copy-stack">
             <h2 id="cases-title">
-              Somos distintos. Mira cómo ya activamos este universo.
+              Somos disintos. Y para ayudarte a entender nuestro universo y todo lo que esta capacidad permite,
+              aquí tienes algunos ejemplos reales de lo que ya hemos hecho:
             </h2>
-            <p>
-              Casos reales, comunidades reales. Cada logo es una puerta hacia
-              un sexto sentido en acción.
-            </p>
           </div>
-          <div class="case-grid" id="caseGrid" role="list"></div>
+          <div class="case-hint" aria-hidden="true">Desliza para ver m�s casos →</div>
+          <div class="case-track" id="caseTrack" role="list"></div>
         </div>
         <div class="section__nav">
           <button
@@ -325,10 +331,25 @@
             data-target="acto-cierre"
             aria-label="Pasar al cierre"
           >
-            Ir al cierre
+            Avancemos
           </button>
         </div>
       </section>
+
+      <div class="case-modal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle" hidden>
+        <div class="case-modal__backdrop"></div>
+        <div class="case-modal__content">
+          <button class="case-modal__close" aria-label="Cerrar">×</button>
+          <div class="case-modal__media" id="caseModalMedia" aria-hidden="true"></div>
+          <div class="case-modal__body">
+            <p class="eyebrow" id="caseModalEyebrow">Caso</p>
+            <h3 id="caseModalTitle"></h3>
+            <p id="caseModalDescription"></p>
+            <div class="case-modal__tags" id="caseModalTags" aria-label="Tags"></div>
+            <a id="caseModalLink" class="primary" target="_blank" rel="noreferrer">Leer más</a>
+          </div>
+        </div>
+      </div>
 
       <section
         id="acto-cierre"
@@ -336,40 +357,57 @@
         aria-labelledby="closing-title"
       >
         <div class="section__content">
-          <div class="copy-stack">
-            <h2 id="closing-title">Imagina lo que podemos crear juntos.</h2>
-            <p>
-              Estos son solo algunos ejemplos. Diseñemos comunidades digitales
-              tan auténticas como lo que sueñas transformar.
-            </p>
-          </div>
-          <form class="co-create-form" aria-label="Compártenos tu visión">
-            <label for="goalInput">¿Qué quieres conseguir?</label>
-            <input
-              id="goalInput"
-              type="text"
-              placeholder="Fidelizar, monetizar, sorprender…"
-            />
-            <label for="transformationSelect">
-              ¿Qué quieres transformar?
-            </label>
-            <select id="transformationSelect">
-              <option value="experiencias">Experiencias en vivo</option>
-              <option value="community">Comunidades internas</option>
-              <option value="sponsors">
-                Sponsorships y activaciones
-              </option>
-              <option value="datos">
-                Inteligencia del comportamiento
-              </option>
-            </select>
-            <div class="form__actions">
-              <button type="submit" class="primary">Hablemos</button>
-              <button type="button" class="ghost">
-                Agenda un laboratorio
-              </button>
+          <div class="copy-stack closing-copy">
+            <div class="closing-hero">
+              <div class="closing-hero__lead">
+                <h1 id="closing-title">Imagina lo que podemos hacer por ti.</h1>
+                <h3 class="closing-lede">
+                  Estos son solo algunos ejemplos. Somos tecnología para crear comunidades digitales reales,
+                  a través del sexto sentido de las personas. Como tú las imagines.
+                </h3>
+              </div>
+              
             </div>
-          </form>
+          </div>
+          <div class="team-grid" aria-label="Equipo Placenet">
+            <article class="team-card">
+              <div class="team-card__avatar" aria-hidden="true"></div>
+              <div>
+                <h3>Alex Vega</h3>
+                <p class="team-card__role">Co-founder · Experiencia</p>
+              </div>
+              <div class="team-card__actions">
+                <a href="mailto:hola@placenet.ai" aria-label="Correo">✉</a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+                <a href="tel:+34123456789" aria-label="Teléfono">☎</a>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-card__avatar" aria-hidden="true"></div>
+              <div>
+                <h3>Camila López</h3>
+                <p class="team-card__role">Head of Activations</p>
+              </div>
+              <div class="team-card__actions">
+                <a href="mailto:hola@placenet.ai" aria-label="Correo">✉</a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+                <a href="tel:+34999999999" aria-label="Teléfono">☎</a>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-card__avatar" aria-hidden="true"></div>
+              <div>
+                <h3>Kai Morales</h3>
+                <p class="team-card__role">Tech & Datos</p>
+              </div>
+              <div class="team-card__actions">
+                <a href="mailto:hola@placenet.ai" aria-label="Correo">✉</a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+                <a href="tel:+34888888888" aria-label="Teléfono">☎</a>
+              </div>
+            </article>
+          </div>
+          
           <div class="section__nav">
             <button
               type="button"
