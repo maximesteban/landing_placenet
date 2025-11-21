@@ -62,18 +62,33 @@
           </div>
           <div class="memory__canvas">
             <div class="memory__parallax" aria-hidden="true">
+              <div class="parallax__layer parallax__layer--gif"></div>
               <div class="parallax__layer parallax__layer--back"></div>
               <div class="parallax__layer parallax__layer--mid"></div>
               <div class="parallax__layer parallax__layer--front"></div>
+              <div class="memory__note memory__note--greet" id="greetNote" role="status" aria-live="polite">
+                <span class="memory__note-label">QUIÉN ERES</span>
+                <span class="memory__note-text">Hola <span class="memory__name">Alex</span>, ¿qué tal?!!</span>
+              </div>
+              <div class="memory__note memory__note--place" id="placeNote" role="status" aria-live="polite">
+                <span class="memory__note-label">DÓNDE ESTÁS</span>
+                <span class="memory__note-text">
+                  Bienvenido a <span class="memory__place">Placenet</span>. <span class="memory__entry">Aquí tienes tu entrada.</span>
+                </span>
+              </div>
+              <div class="portal-overlay" id="portalOverlay" aria-hidden="true">
+                <div class="portal-ring"></div>
+                <div class="portal-core"></div>
+              </div>
             </div>
             <div class="prompt-stack" role="group" aria-label="Preguntas clave">
-              <button class="prompt-card">
+              <button class="prompt-card" data-action="greet" data-name="Alex">
                 ¿Y si ese lugar pudiera reconocerte?
               </button>
-              <button class="prompt-card">
+              <button class="prompt-card" data-action="welcome" data-place="Placenet">
                 ¿Y si supiera que has llegado y qué necesitas?
               </button>
-              <button class="prompt-card">
+              <button class="prompt-card" data-action="portal">
                 ¿Y si pudieras percibirlo a través de tu sexto sentido?
               </button>
             </div>
@@ -116,6 +131,7 @@
             <div class="placenet__device" aria-hidden="true">
               <div class="device__frame">
                 <div class="device__screen">
+                  <div class="screen__bg"></div>
                   <div class="screen__glow"></div>
                   <div class="screen__signal"></div>
                 </div>

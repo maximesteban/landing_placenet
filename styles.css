@@ -433,6 +433,14 @@ main {
   opacity: 0.5;
 }
 
+.parallax__layer--gif {
+  background-image: url("assets/gifs/memories.gif");
+  mix-blend-mode: normal;
+  opacity: 0.7;
+  filter: saturate(1.1) contrast(1.05);
+  transform: scale(1.05);
+}
+
 .parallax__layer--back {
   background-image: linear-gradient(120deg, #272c4a, #111531);
   transform: scale(1.1);
@@ -447,6 +455,123 @@ main {
   background-image: linear-gradient(60deg, rgba(255, 122, 223, 0.3), transparent),
     linear-gradient(0deg, rgba(78, 242, 255, 0.2), transparent);
   transform: translate3d(10px, 10px, 0);
+}
+
+.memory__note {
+  position: absolute;
+  right: 1.2rem;
+  top: 1.2rem;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  background: rgba(6, 8, 15, 0.88);
+  border: 1px solid rgba(78, 242, 255, 0.45);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35), 0 0 25px rgba(78, 242, 255, 0.35);
+  color: #eef7ff;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+}
+
+.memory__note--place {
+  top: auto;
+  bottom: 1.2rem;
+  right: auto;
+  left: 1.2rem;
+  border-color: rgba(255, 122, 223, 0.5);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35), 0 0 25px rgba(255, 122, 223, 0.3);
+}
+
+.memory__note-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+  text-transform: uppercase;
+}
+
+.memory__note-text {
+  font-weight: 600;
+}
+
+.memory__note.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portal-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(78, 242, 255, 0.18), transparent 55%);
+  transition: opacity 0.2s ease;
+}
+
+.portal-ring {
+  width: 45%;
+  height: 45%;
+  border: 2px solid rgba(78, 242, 255, 0.7);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px rgba(78, 242, 255, 0.6));
+  transform: scale(0.85);
+  opacity: 0.7;
+}
+
+.portal-core {
+  width: 14%;
+  height: 14%;
+  background: radial-gradient(circle, rgba(255, 122, 223, 0.7), rgba(78, 242, 255, 0.9));
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255, 122, 223, 0.5), 0 0 35px rgba(78, 242, 255, 0.35);
+  transform: scale(0.6);
+}
+
+.portal-overlay.is-active {
+  opacity: 1;
+}
+
+.portal-overlay.is-active .portal-ring {
+  animation: portalExpand 0.7s ease-out forwards;
+}
+
+.portal-overlay.is-active .portal-core {
+  animation: portalPulse 0.7s ease-out forwards;
+}
+
+@keyframes portalExpand {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.6;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes portalPulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
 }
 
 .prompt-stack {
@@ -528,6 +653,14 @@ main {
   border-radius: 1.2rem;
   background: linear-gradient(160deg, rgba(255, 122, 223, 0.15), rgba(78, 242, 255, 0.25));
   overflow: hidden;
+}
+
+.screen__bg {
+  position: absolute;
+  inset: 0;
+  background: url("assets/gifs/phone.gif") center / cover no-repeat;
+  filter: saturate(1.05) contrast(1.05);
+  opacity: 0.8;
 }
 
 .screen__glow,

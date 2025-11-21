@@ -98,9 +98,94 @@ audioToggle?.addEventListener("click", () => {
 
 
 const promptCards = document.querySelectorAll(".prompt-card");
+const greetNote = document.getElementById("greetNote");
+const placeNote = document.getElementById("placeNote");
+const portalOverlay = document.getElementById("portalOverlay");
+const greetNames = ["Alex", "Camila", "Luis", "Eva", "Kai", "Riley"];
+const placeNames = ["Placenet", "PulseFest", "Distrito Vivo", "Arena 360", "Roots Retail", "Tu Espacio"];
+const entryPhrases = [
+  "Tu entrada digital está lista.",
+  "Tu check-in se completó solo.",
+  "Ya activamos tu pase VIP.",
+  "Tienes Wi‑Fi prioritario habilitado.",
+  "Tu guía personalizada te espera.",
+  "Reservamos tu asiento favorito.",
+  "Asignamos tu locker seguro.",
+  "Tu bebida de siempre va en camino.",
+  "Configuramos la sala según tu mood.",
+  "Tus accesos y credenciales están listos.",
+  "Tu playlist se sincronizó con el ambiente.",
+  "Tu asistente ya tiene tu agenda de hoy."
+];
+let greetTimeout;
+let placeTimeout;
+let portalTimeout;
+let greetIndex = 0;
+let placeIndex = 0;
+let entryIndex = 0;
+
+function showGreet() {
+  if (!greetNote) return;
+  clearTimeout(greetTimeout);
+  const name = greetNames[greetIndex];
+  greetIndex = (greetIndex + 1) % greetNames.length;
+  const nameTarget = greetNote.querySelector(".memory__name");
+  if (nameTarget) {
+    nameTarget.textContent = name;
+  }
+  greetNote.classList.add("is-visible");
+  greetTimeout = setTimeout(() => greetNote.classList.remove("is-visible"), 2800);
+}
+
+function showWelcome() {
+  if (!placeNote) return;
+  clearTimeout(placeTimeout);
+  const place = placeNames[placeIndex];
+  placeIndex = (placeIndex + 1) % placeNames.length;
+  const entry = entryPhrases[entryIndex];
+  entryIndex = (entryIndex + 1) % entryPhrases.length;
+  const placeTarget = placeNote.querySelector(".memory__place");
+  const entryTarget = placeNote.querySelector(".memory__entry");
+  if (placeTarget) {
+    placeTarget.textContent = place;
+  }
+  if (entryTarget) {
+    entryTarget.textContent = entry;
+  }
+  placeNote.classList.add("is-visible");
+  placeTimeout = setTimeout(() => placeNote.classList.remove("is-visible"), 3200);
+}
+
+function triggerPortal() {
+  if (reduceMotion) {
+    setActiveScene(currentSceneIndex + 1);
+    return;
+  }
+  if (!portalOverlay) {
+    setActiveScene(currentSceneIndex + 1);
+    return;
+  }
+  clearTimeout(portalTimeout);
+  portalOverlay.classList.add("is-active");
+  portalOverlay.setAttribute("aria-hidden", "false");
+  portalTimeout = setTimeout(() => {
+    portalOverlay.classList.remove("is-active");
+    portalOverlay.setAttribute("aria-hidden", "true");
+    setActiveScene(currentSceneIndex + 1);
+  }, 750);
+}
+
 promptCards.forEach((card) => {
   card.addEventListener("click", () => {
-    card.classList.toggle("is-active");
+    const action = card.dataset.action;
+    card.classList.add("is-active");
+    if (action === "greet") {
+      showGreet();
+    } else if (action === "welcome") {
+      showWelcome();
+    } else if (action === "portal") {
+      triggerPortal();
+    }
   });
 });
 
