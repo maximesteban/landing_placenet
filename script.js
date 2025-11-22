@@ -453,7 +453,7 @@ const cases = [
     description:
       "Conectamos comunidades en retail, educación, smart cities y más. Descubre el resto del universo Placenet.",
     tags: ["Retail", "Eventos", "Smart venues"],
-    link: "https://placenet.ai",
+    link: "https://placenet.app",
   },
 ];
 
@@ -545,5 +545,54 @@ if (form) {
     alert(
       `Gracias por compartir tu visión. Exploraremos cómo ${goal || "esa idea"} puede transformarse en ${transformation}.`
     );
+  });
+}
+
+// FLOATING NAVIGATION - TEMPORAL
+const floatingNav = document.getElementById("floatingNav");
+const floatingNavToggle = document.getElementById("floatingNavToggle");
+const floatingNavLinks = document.querySelectorAll(".floating-nav__list a");
+
+if (floatingNavToggle) {
+  floatingNavToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    floatingNav.classList.toggle("is-open");
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!floatingNav.contains(e.target)) {
+      floatingNav.classList.remove("is-open");
+    }
+  });
+
+  // Handle navigation clicks
+  floatingNavLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const sectionIndex = parseInt(link.dataset.section);
+
+      // Update active state
+      floatingNavLinks.forEach((l) => l.classList.remove("is-active"));
+      link.classList.add("is-active");
+
+      // Navigate to section
+      if (sectionIndex === 0) {
+        // Go back to boot screen
+        document.body.classList.remove("boot-complete", "story-started");
+        storySteps.forEach((section) => section.classList.remove("is-active"));
+        currentSceneIndex = -1;
+        document.getElementById("acto-inicial").scrollIntoView({ behavior: "smooth" });
+      } else {
+        // Navigate to story step
+        if (!document.body.classList.contains("boot-complete")) {
+          completeBoot();
+        }
+        setActiveScene(sectionIndex - 1);
+      }
+
+      // Close nav
+      floatingNav.classList.remove("is-open");
+    });
   });
 }
