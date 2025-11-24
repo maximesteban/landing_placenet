@@ -23,6 +23,50 @@ html {
   box-sizing: border-box;
 }
 
+/* Prevenir selección de texto en elementos clickables */
+button,
+a,
+[role="button"],
+.nav-button,
+.prompt-card,
+.layer-tab,
+.case-card,
+.impact__statement,
+.primary,
+.ghost,
+.case-card__cta,
+.team-card__actions a,
+.case-modal__close,
+.floating-nav__toggle {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Prevenir selección en elementos hijos de clickables */
+button *,
+a *,
+[role="button"] *,
+.nav-button *,
+.prompt-card *,
+.layer-tab *,
+.case-card *,
+.impact__statement *,
+.primary *,
+.ghost *,
+.case-card__cta *,
+.case-modal__close * {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  pointer-events: none;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -380,27 +424,6 @@ main {
   overflow: hidden;
   box-shadow: 0 0 40px rgba(78, 242, 255, 0.4), inset 0 0 25px rgba(78, 242, 255, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  /* Prevenir selección de texto */
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  /* Prevenir menú contextual en iOS */
-  -webkit-touch-callout: none !important;
-  /* Prevenir resaltado al tocar en móvil */
-  -webkit-tap-highlight-color: transparent !important;
-  /* Hacer que no sea seleccionable como elemento */
-  pointer-events: auto;
-}
-
-.hold-button *,
-.hold-button span {
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  -webkit-touch-callout: none !important;
-  pointer-events: none;
 }
 
 .hold-button:hover,
