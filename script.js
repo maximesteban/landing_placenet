@@ -1,10 +1,12 @@
 const bootMessages = [
+  "Preparando sensores contextuales…",
   "Accediendo a tu ubicación…",
-  "Comprobación de indentidad en curso...",
+  "Comprobación de identidad en curso...",
   "Listo. Sexto sentido activado.",
 ];
 
 const bootLog = document.querySelector(".boot__log");
+const bootLogText = document.querySelector(".boot__log-text");
 const holdButton = document.getElementById("activateSense");
 const skipButton = document.getElementById("skipBoot");
 const audioToggle = document.getElementById("audioToggle");
@@ -15,6 +17,8 @@ const opportunities =
   typeof window !== "undefined" && window.opportunities ? window.opportunities : [];
 let logIndex = 0;
 let holdTimer;
+let typewriterTimeout;
+let bootIntervalId;
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 );
@@ -25,23 +29,57 @@ prefersReducedMotion.addEventListener("change", (event) => {
   reduceMotion = event.matches;
 });
 
+function typewriterEffect(text, element, onComplete) {
+  if (!element) return;
+
+  // Limpiar el contenido actual
+  element.textContent = "";
+
+  // Si el usuario prefiere reducir el movimiento, mostrar el texto completo
+  if (reduceMotion) {
+    element.textContent = text;
+    if (onComplete) onComplete();
+    return;
+  }
+
+  let charIndex = 0;
+
+  function typeNextChar() {
+    if (charIndex < text.length) {
+      element.textContent += text[charIndex];
+      charIndex++;
+      // Velocidad de escritura variable para efecto más realista (30-70ms)
+      const delay = Math.random() * 40 + 30;
+      typewriterTimeout = setTimeout(typeNextChar, delay);
+    } else {
+      if (onComplete) onComplete();
+    }
+  }
+
+  typeNextChar();
+}
+
 function addBootMessage() {
-  if (!bootLog || logIndex >= bootMessages.length) return false;
+  if (!bootLogText || logIndex >= bootMessages.length) return false;
+
   const message = bootMessages[logIndex];
-  const li = document.createElement("li");
-  li.textContent = message;
-  bootLog.appendChild(li);
-  bootLog.scrollTop = bootLog.scrollHeight;
-  logIndex += 1;
+
+  typewriterEffect(message, bootLogText, () => {
+    logIndex += 1;
+
+    // Si hay más mensajes, esperar un momento antes de mostrar el siguiente
+    if (logIndex < bootMessages.length) {
+      bootIntervalId = setTimeout(addBootMessage, 800);
+    }
+  });
+
   return logIndex < bootMessages.length;
 }
 
-const bootInterval = setInterval(() => {
-  const hasMorePending = addBootMessage();
-  if (document.body.classList.contains("boot-complete") || !hasMorePending) {
-    clearInterval(bootInterval);
-  }
-}, 1700);
+// Iniciar el primer mensaje
+if (bootLogText) {
+  addBootMessage();
+}
 
 function setActiveScene(index) {
   if (!storySteps.length) return;
@@ -59,6 +97,11 @@ function setActiveScene(index) {
 
 function completeBoot() {
   if (document.body.classList.contains("boot-complete")) return;
+
+  // Limpiar todos los timeouts del typewriter y boot
+  clearTimeout(typewriterTimeout);
+  clearTimeout(bootIntervalId);
+
   document.body.classList.add("boot-complete", "story-started");
   holdButton?.setAttribute("aria-pressed", "true");
   setActiveScene(0);
