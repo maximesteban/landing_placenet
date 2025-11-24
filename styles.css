@@ -1264,21 +1264,33 @@ main {
     display: block;
   }
 
+  .cases .section__content {
+    max-width: 100%;
+    width: 100%;
+  }
+
   .case-track {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     gap: 1rem;
     padding-bottom: 1rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-width: 100vw;
+  }
+
+  .case-track::-webkit-scrollbar {
+    display: none;
   }
 
   .case-card {
-    flex: 0 0 calc(100vw - 4rem);
-    max-width: calc(100vw - 4rem);
+    flex: 0 0 calc(100vw - 3rem);
+    min-width: calc(100vw - 3rem);
+    max-width: calc(100vw - 3rem);
     scroll-snap-align: center;
     min-height: auto;
     height: auto;
@@ -1314,6 +1326,16 @@ main {
   .case-modal__media {
     height: auto;
     min-height: 280px;
+  }
+
+  .case-modal__close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2001;
+    background: rgba(0, 1, 34, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(78, 242, 255, 0.5);
   }
 }
 
