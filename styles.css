@@ -380,6 +380,15 @@ main {
   overflow: hidden;
   box-shadow: 0 0 40px rgba(78, 242, 255, 0.4), inset 0 0 25px rgba(78, 242, 255, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Prevenir selección de texto */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  /* Prevenir menú contextual en iOS */
+  -webkit-touch-callout: none;
+  /* Prevenir resaltado al tocar en móvil */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hold-button:hover,

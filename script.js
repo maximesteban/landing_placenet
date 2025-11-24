@@ -88,6 +88,10 @@ holdButton?.addEventListener("keydown", (event) => {
   }
 });
 holdButton?.addEventListener("keyup", cancelHold);
+// Prevenir menú contextual en móvil
+holdButton?.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+});
 
 skipButton?.addEventListener("click", completeBoot);
 
