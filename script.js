@@ -368,87 +368,88 @@ if (opportunityTrack) {
 const cases = [
   {
     logoImage: "assets/logos/rfea.svg",
-    detail: "Circuito inteligente para fans y atletas con retos patrocinados.",
+    detail: "Aplicación oficial de los Campeonatos de España de Atletismo.",
     highlight: "Eventos > Deporte",
-    modalMedia: "assets/gifs/memories.gif",
+    modalMedia: "assets/gifs/rfea.gif",
     description:
-      "Activamos dinámicas phygital en pista y gradas, con retos en vivo, recompensas y contenidos de marca sin pedir datos personales.",
-    tags: ["Deporte", "Eventos", "App"],
+      "App nativa para los Campeonatos de España de Atletismo. Se transforma según la ciudad y campeonato, proporcionando información contextualizada que la RFEA define para cada evento. Integra un chatbot asistente que acompaña a los visitantes en las ciudades sede. Incluye funcionalidades de dinamización del público en tiempo real. Interacción mediante chat, popups y notificaciones geolocalizadas en los dominios de pista.",
+    tags: ["Deporte", "Eventos", "App", "Chatbot"],
     link: "#rfea",
   },
   {
     logoImage: "assets/logos/Bourgeois-Fincas.png",
-    detail: "Retail experiencial con guías y picks personalizados.",
-    highlight: "Administración de Fincas",
-    modalMedia: "assets/gifs/memories.gif",
+    detail: "Aplicación de gestión y comunicación para propiedades y comunidades.",
+    highlight: "Admin. de Fincas",
+    modalMedia: "assets/gifs/bourgeois.gif",
     description:
-      "Contenidos de marcas, playlists y cross-sell inmediato según zona y afinidades, con Wi‑Fi prioritario y avisos en tienda.",
-    tags: ["Comunidades", "Administracion de Fincas", "App"],
+      "App nativa para administrados y trabajadores que ofrece una experiencia contextual según la ubicación del usuario (dentro o fuera de la finca) y su perfil (trabajador o cliente). Centraliza todas las necesidades operativas y de comunicación mediante integraciones completas con herramientas de comunicación, sistemas internos propietarios, CMS, PMS, control horario digital y chatbots inteligentes. Una solución integral que mejora tanto la gestión como la experiencia del residente.",
+    tags: ["Comunidades", "Administración de Fincas", "App", "Chatbot"],
     link: "#bourgeois",
   },
   {
-    logoImage: "assets/logos/Can-Felipa.svg",
-    detail: "Centro cultural conectado con microlandings por sala.",
+    logoImage: "assets/logos/can_felipa.png",
+    detail: "Aplicación nativa con IA para acompañamiento y creación de comunidad.",
     highlight: "Centros Deportivos",
-    modalMedia: "assets/gifs/memories.gif",
+    modalMedia: "assets/gifs/canfelipa.png",
     description:
-      "Programación contextual por salas, donaciones instantáneas y comunidad de visitantes con retos culturales y multimedia.",
-    tags: ["Deporte", "Comunidad", "App"],
-    link: "#canf",
+      "App nativa para la comunidad del gimnasio Can Felipa. Centrada en el acompañamiento contextual mediante IA. Asistente inteligente que proporciona información relevante en cada momento. Mejora los servicios del centro con recomendaciones personalizadas. Se adapta al contexto y necesidades de cada usuario. Transforma la experiencia deportiva en algo único.",
+    tags: ["Deporte", "Comunidad", "App", "IA"],
+    link: "#canfelipa",
   },
   {
     logoImage: "assets/logos/crec.png",
-    detail: "Coworking que reconoce roles y activa servicios al llegar.",
+    detail: "Todo en una app: servicios, networking contextual y chat sin datos personales.",
     highlight: "Coworkings",
-    modalMedia: "assets/gifs/memories.gif",
+    modalMedia: "assets/gifs/crec.jpg",
     description:
-      "Check-in invisible, reservas de salas y lockers, avisos segmentados y networking sin exponer datos personales.",
+      "App nativa que centraliza todos los servicios y herramientas digitales de CREC en una única plataforma. Sustituye múltiples aplicaciones dispersas por una solución completa que optimiza la operativa de los administradores y eleva la experiencia de los usuarios. Integra funcionalidades de networking contextualizado por ubicación y necesidades, con chat privado sin intercambio de datos personales y muro comunitario, creando una comunidad digital real y conectada.",
     tags: ["App", "Comunidad", "Networking"],
     link: "#crec",
   },
   {
-    logoImage: "assets/logos/rfea.svg",
-    detail: "Fan engagement itinerante con contenidos geolocalizados.",
+    logoImage: "assets/logos/bcn.png",
+    detail: "Coordinación operativa del Tour de France: señalización y balizaje.",
     highlight: "Eventos > Deporte",
-    modalMedia: "assets/gifs/memories.gif",
+    modalMedia: "assets/gifs/tdf.jpg",
     description:
-      "Cada etapa desbloquea retos, contenidos premium y perks de patrocinadores; mapas anónimos de afluencia en tiempo real.",
+      "Web app a medida desarrollada con tecnología Placenet para IBE Barcelona. Diseñada para planificar y organizar las etapas del Tour de France en Barcelona. Coordina todos los aspectos operativos de señalización y balizaje. Herramienta especializada para la gestión logística. Optimiza la operativa de uno de los eventos deportivos más importantes del mundo.",
     tags: ["Eventos", "WebApp", "Operativa"],
-    link: "#tdf",
+    link: "#ibe",
   },
   {
-    logoImage: "assets/logos/rfea.svg",
-    detail: "Evento con journeys digitales por rol y patrocinador.",
-    highlight: "Universidades",
-    modalMedia: "assets/gifs/memories.gif",
+    logoImage: "assets/logos/ies.png",
+    detail: "Ecosistema educativo completo: comunidad, administración y seguridad.",
+    highlight: "Educación",
+    modalMedia: "assets/gifs/ies.gif",
     description:
-      "Micrositios de marca, dinámicas de stand, colas inteligentes y lead capture sin datos personales.",
-    tags: ["Universidades", "Comunidad", "App"],
+      "App nativa que transforma la presencia digital de centros educativos. Evoluciona de una aplicación estática sin interacción a un ecosistema completo dotado de funcionalidades de comunidad (muro social y chat), integración total con los procesos administrativos del centro y módulos avanzados de seguridad. Una solución integral que resulta verdaderamente útil para los estudiantes, al tiempo que potencia el control y la gestión eficiente por parte de la institución educativa.",
+    tags: ["Educación", "Comunidad", "App", "Seguridad"],
     link: "#ies",
   },
   {
-    logoImage: "assets/logos/rfea.svg",
-    detail: "Experiencias fitness con retos y recompensas inmediatas.",
+    logoImage: "assets/logos/inshape.png",
+    detail: "Reservas de tenis + comunidad digital viva en una sola webapp multisede.",
     highlight: "Deporte",
-    modalMedia: "assets/gifs/memories.gif",
+    modalMedia: "assets/gifs/inshape.png",
     description:
-      "Check-in automático, playlists dinámicas, challenges patrocinados y kioskos de recompensas in situ.",
-    tags: ["Deporte", "App"],
+      "App integrada con la plataforma de un partner húngaro que colabora con la Federación Húngara de Tenis y clubes deportivos. Transforma un portal de reservas tradicional y estático en una comunidad digital viva y dinámica. Los usuarios pueden reservar y gestionar pistas en todos los centros adheridos, acceder a funcionalidades digitales contextualizadas cuando se encuentran en las instalaciones, y participar en la capa de comunidad de Placenet. Todo unificado en una única web app multisede.",
+    tags: ["Deporte", "WebApp", "Comunidad"],
     link: "#inshape",
   },
   {
-    logoImage: "assets/logos/rfea.svg",
-    detail: "Zona fan con misiones, drops y contenidos exclusivos.",
-    highlight: "Eventos > Deporte",
-    modalMedia: "assets/gifs/memories.gif",
+    logoImage: "assets/logos/f1.svg",
+    detail: "Colas virtuales inteligentes que eliminan esperas físicas en eventos.",
+    highlight: "Eventos > Motor",
+    modalMedia: "assets/gifs/f1.jpg",
     description:
-      "Misiones phygital por zona, drops coleccionables, streaming y analítica anónima de movimiento.",
+      "Integración de tecnología Placenet en una web app de gestión de colas digitales para la Fan Zone del Gran Premio de F1 en Barcelona. Optimiza el flujo de asistentes mediante un sistema de colas virtuales contextualizadas que se activan únicamente cuando el usuario se encuentra en el lugar. Permite gestionar la espera en activaciones de forma virtual mientras los visitantes continúan disfrutando del evento, eliminando las esperas físicas y mejorando significativamente la experiencia del fan.",
     tags: ["Eventos", "WebApp", "Operativa"],
     link: "#f1",
   },
   {
-    detail: "Explora otros despliegues y verticales que ya activamos.",
-    highlight: "Ver más casos",
+     logoImage: "assets/img/marca white.png",
+    detail: "Y muchos más...",
+    highlight: "Ver casos",
     modalMedia: "assets/gifs/memories.gif",
     description:
       "Conectamos comunidades en retail, educación, smart cities y más. Descubre el resto del universo Placenet.",
@@ -471,15 +472,16 @@ function populateCases() {
   caseTrack.innerHTML = "";
   cases.forEach((cs, idx) => {
     const card = document.createElement("article");
-    const isMore = cs.highlight === "Ver más casos";
+    const isMore = cs.highlight === "Ver casos";
     card.className = isMore ? "case-card case-card--more" : "case-card";
     card.setAttribute("role", "listitem");
     card.dataset.index = String(idx);
+    const logoClass = cs.logoImage && cs.logoImage.includes("crec.png") ? 'class="logo-white"' : '';
     const logoMarkup = cs.logoImage
-      ? `<div class="case-card__logo"><img src="${cs.logoImage}" alt="${cs.logo}" /></div>`
+      ? `<div class="case-card__logo"><img src="${cs.logoImage}" ${logoClass} alt="${cs.logo}" /></div>`
       : `<div class="case-card__logo">${cs.logo}</div>`;
     const bodyMarkup = isMore
-      ? `<p>${cs.detail}</p><button class="primary case-card__cta">Ver más casos</button>`
+      ? `<p>${cs.detail}</p><button class="primary case-card__cta">Ver más</button>`
       : `<p>${cs.detail}</p><span class="eyebrow">${cs.highlight}</span>`;
     card.innerHTML = `${logoMarkup}${bodyMarkup}`;
     if (isMore) {
@@ -498,7 +500,32 @@ function populateCases() {
 function openCaseModal(cs) {
   if (!caseModal) return;
   caseModalTitle.textContent = cs.logo;
-  caseModalDescription.textContent = cs.description || cs.detail;
+
+  // Estructura el texto de descripción
+  if (cs.description) {
+    const description = cs.description;
+    // Divide el texto en oraciones por punto
+    const sentences = description.split('. ').filter(s => s.trim());
+
+    if (sentences.length > 2) {
+      // Si hay más de 2 oraciones, crea una lista
+      const intro = sentences[0] + '.';
+      const bullets = sentences.slice(1);
+
+      caseModalDescription.innerHTML = `
+        <p>${intro}</p>
+        <ul>
+          ${bullets.map(bullet => `<li>${bullet}${bullet.endsWith('.') ? '' : '.'}</li>`).join('')}
+        </ul>
+      `;
+    } else {
+      // Si son pocas oraciones, muestra como párrafo normal
+      caseModalDescription.innerHTML = `<p>${description}</p>`;
+    }
+  } else {
+    caseModalDescription.innerHTML = `<p>${cs.detail}</p>`;
+  }
+
   caseModalTags.innerHTML = "";
   (cs.tags || []).forEach((tag) => {
     const span = document.createElement("span");
@@ -511,8 +538,20 @@ function openCaseModal(cs) {
     caseModalLink.textContent = "Leer más";
   }
   if (caseModalMedia) {
-    caseModalMedia.textContent = "";
-    caseModalMedia.style.backgroundImage = cs.modalMedia ? `url(${cs.modalMedia})` : "none";
+    caseModalMedia.innerHTML = "";
+    if (cs.modalMedia) {
+      const img = document.createElement("img");
+      img.src = cs.modalMedia;
+      img.alt = cs.logo || "Caso multimedia";
+
+      // Detecta si es GIF o foto
+      const isGif = cs.modalMedia.toLowerCase().endsWith('.gif');
+      if (!isGif) {
+        img.classList.add('photo');
+      }
+
+      caseModalMedia.appendChild(img);
+    }
   }
   caseModal.hidden = false;
 }
