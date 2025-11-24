@@ -374,7 +374,7 @@ const cases = [
     description:
       "App nativa para los Campeonatos de España de Atletismo. Se transforma según la ciudad y campeonato, proporcionando información contextualizada que la RFEA define para cada evento. Integra un chatbot asistente que acompaña a los visitantes en las ciudades sede. Incluye funcionalidades de dinamización del público en tiempo real. Interacción mediante chat, popups y notificaciones geolocalizadas en los dominios de pista.",
     tags: ["Deporte", "Eventos", "App", "Chatbot"],
-    link: "#rfea",
+    link: "https://placenet.app",
   },
   {
     logoImage: "assets/logos/Bourgeois-Fincas.png",
@@ -384,7 +384,7 @@ const cases = [
     description:
       "App nativa para administrados y trabajadores que ofrece una experiencia contextual según la ubicación del usuario (dentro o fuera de la finca) y su perfil (trabajador o cliente). Centraliza todas las necesidades operativas y de comunicación mediante integraciones completas con herramientas de comunicación, sistemas internos propietarios, CMS, PMS, control horario digital y chatbots inteligentes. Una solución integral que mejora tanto la gestión como la experiencia del residente.",
     tags: ["Comunidades", "Administración de Fincas", "App", "Chatbot"],
-    link: "#bourgeois",
+    link: "https://placenet.app",
   },
   {
     logoImage: "assets/logos/can_felipa.png",
@@ -394,7 +394,7 @@ const cases = [
     description:
       "App nativa para la comunidad del gimnasio Can Felipa. Centrada en el acompañamiento contextual mediante IA. Asistente inteligente que proporciona información relevante en cada momento. Mejora los servicios del centro con recomendaciones personalizadas. Se adapta al contexto y necesidades de cada usuario. Transforma la experiencia deportiva en algo único.",
     tags: ["Deporte", "Comunidad", "App", "IA"],
-    link: "#canfelipa",
+    link: "https://placenet.app",
   },
   {
     logoImage: "assets/logos/crec.png",
@@ -404,7 +404,7 @@ const cases = [
     description:
       "App nativa que centraliza todos los servicios y herramientas digitales de CREC en una única plataforma. Sustituye múltiples aplicaciones dispersas por una solución completa que optimiza la operativa de los administradores y eleva la experiencia de los usuarios. Integra funcionalidades de networking contextualizado por ubicación y necesidades, con chat privado sin intercambio de datos personales y muro comunitario, creando una comunidad digital real y conectada.",
     tags: ["App", "Comunidad", "Networking"],
-    link: "#crec",
+    link: "https://placenet.app",
   },
   {
     logoImage: "assets/logos/bcn.png",
@@ -414,7 +414,7 @@ const cases = [
     description:
       "Web app a medida desarrollada con tecnología Placenet para IBE Barcelona. Diseñada para planificar y organizar las etapas del Tour de France en Barcelona. Coordina todos los aspectos operativos de señalización y balizaje. Herramienta especializada para la gestión logística. Optimiza la operativa de uno de los eventos deportivos más importantes del mundo.",
     tags: ["Eventos", "WebApp", "Operativa"],
-    link: "#ibe",
+    link: "https://placenet.app",
   },
   {
     logoImage: "assets/logos/ies.png",
@@ -424,7 +424,7 @@ const cases = [
     description:
       "App nativa que transforma la presencia digital de centros educativos. Evoluciona de una aplicación estática sin interacción a un ecosistema completo dotado de funcionalidades de comunidad (muro social y chat), integración total con los procesos administrativos del centro y módulos avanzados de seguridad. Una solución integral que resulta verdaderamente útil para los estudiantes, al tiempo que potencia el control y la gestión eficiente por parte de la institución educativa.",
     tags: ["Educación", "Comunidad", "App", "Seguridad"],
-    link: "#ies",
+    link: "https://placenet.app",
   },
   {
     logoImage: "assets/logos/inshape.png",
@@ -434,17 +434,17 @@ const cases = [
     description:
       "App integrada con la plataforma de un partner húngaro que colabora con la Federación Húngara de Tenis y clubes deportivos. Transforma un portal de reservas tradicional y estático en una comunidad digital viva y dinámica. Los usuarios pueden reservar y gestionar pistas en todos los centros adheridos, acceder a funcionalidades digitales contextualizadas cuando se encuentran en las instalaciones, y participar en la capa de comunidad de Placenet. Todo unificado en una única web app multisede.",
     tags: ["Deporte", "WebApp", "Comunidad"],
-    link: "#inshape",
+    link: "https://placenet.app",
   },
   {
     logoImage: "assets/logos/f1.svg",
     detail: "Colas virtuales inteligentes que eliminan esperas físicas en eventos.",
-    highlight: "Eventos > Motor",
+    highlight: "Eventos",
     modalMedia: "assets/gifs/f1.jpg",
     description:
       "Integración de tecnología Placenet en una web app de gestión de colas digitales para la Fan Zone del Gran Premio de F1 en Barcelona. Optimiza el flujo de asistentes mediante un sistema de colas virtuales contextualizadas que se activan únicamente cuando el usuario se encuentra en el lugar. Permite gestionar la espera en activaciones de forma virtual mientras los visitantes continúan disfrutando del evento, eliminando las esperas físicas y mejorando significativamente la experiencia del fan.",
     tags: ["Eventos", "WebApp", "Operativa"],
-    link: "#f1",
+    link: "https://placenet.app",
   },
   {
      logoImage: "assets/img/marca white.png",
