@@ -75,11 +75,36 @@ body {
   flex-direction: column;
   background: var(--bg);
   color: var(--text);
-  font-size: clamp(16px, 1.1vw, 18px);
+  font-size: 16px;
   line-height: 1.6;
   background-image: var(--gradient);
   background-attachment: fixed;
   font-family: "Rethink Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Escalado proporcional con zoom CSS para desktop */
+@media (min-width: 769px) and (max-width: 1366px) {
+  body {
+    zoom: 0.95;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  body {
+    zoom: 0.88;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  body {
+    zoom: 0.8;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 899px) {
+  body {
+    zoom: 0.72;
+  }
 }
 
 body.boot-complete #acto-inicial {
@@ -159,9 +184,9 @@ main {
 
 .section {
   position: relative;
-  padding: clamp(2.5rem, 6vh, 6rem) clamp(1.5rem, 6vw, 6rem);
+  padding: clamp(1.5rem, 4vh, 6rem) clamp(1.5rem, 6vw, 6rem);
   overflow: hidden;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -191,6 +216,8 @@ main {
   z-index: 1;
   width: min(1100px, 95%);
   margin: 0 auto;
+  max-height: 100%;
+  overflow: visible;
 }
 
 .section__nav {
@@ -284,10 +311,11 @@ main {
 }
 
 .boot {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .brand-mark {
@@ -829,7 +857,7 @@ main {
   min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: clamp(0.75rem, 2vh, 1.5rem);
   position: relative;
   z-index: 1;
 }
@@ -997,11 +1025,11 @@ main {
 .impact__panel {
   background: rgba(11, 15, 25, 0.7);
   border-radius: 1.5rem;
-  padding: 2.5rem;
+  padding: clamp(1.5rem, 3vh, 2.5rem);
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  min-height: 320px;
+  min-height: clamp(200px, 30vh, 320px);
   min-width: 0;
   position: relative;
   backdrop-filter: blur(8px);
@@ -1312,13 +1340,122 @@ main {
   color: #020305;
 }
 
-@media (max-width: 1024px) and (min-width: 641px) {
-  .case-track {
-    grid-template-columns: repeat(3, 1fr);
+/* Vista móvil - a partir de 768px hacia abajo */
+@media (max-width: 768px) {
+  /* Desactivar zoom en móvil */
+  body {
+    zoom: 1 !important;
   }
-}
 
-@media (max-width: 640px) {
+  .section {
+    min-height: auto;
+    height: auto;
+    padding: 2rem 1.25rem;
+    display: block;
+  }
+
+  html,
+  body {
+    min-height: auto;
+    height: auto;
+  }
+
+  main {
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .section.story-step {
+    display: none;
+  }
+
+  .section.story-step.is-active {
+    display: block;
+  }
+
+  .hold-button {
+    width: 180px;
+    height: 180px;
+  }
+
+  .form__actions {
+    flex-direction: column;
+  }
+
+  .primary,
+  .ghost {
+    width: 100%;
+    text-align: center;
+  }
+
+  .boot__inner {
+    width: 100%;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .boot__rings {
+    margin-inline: auto;
+  }
+
+  .impact__panels {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .impact__panel {
+    padding: 2rem 1.5rem;
+    min-height: 280px;
+  }
+
+  .impact__panel .copy-stack h3 {
+    font-size: clamp(1.3rem, 5vw, 1.5rem);
+  }
+
+  .impact__panel .copy-stack p {
+    font-size: clamp(0.95rem, 3vw, 1rem);
+  }
+
+  .section__nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .impact__statements {
+    flex-direction: column;
+  }
+
+  .interaction-hint {
+    left: 50%;
+    right: auto;
+    bottom: 1rem;
+    transform: translateX(-50%);
+  }
+
+  .cases #cases-title {
+    text-align: center;
+    font-size: clamp(1.4rem, 6vw, 1.9rem);
+    line-height: 1.25;
+  }
+
+  .closing-hero {
+    padding: 1rem;
+  }
+
+  .closing-hero__lead {
+    text-align: center;
+    align-items: center;
+  }
+
+  .closing-hero__lead h1 {
+    font-size: clamp(2.1rem, 7vw, 2.8rem);
+  }
+
+  .closing-lede {
+    font-size: clamp(1.1rem, 4.5vw, 1.35rem);
+    line-height: 1.4;
+  }
+
   .case-hint {
     display: block;
   }
@@ -1395,6 +1532,22 @@ main {
     background: rgba(0, 1, 34, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 25px rgba(78, 242, 255, 0.5);
+  }
+
+  .floating-nav {
+    top: 10px;
+    left: 10px;
+  }
+
+  .floating-nav__toggle {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .floating-nav__content {
+    min-width: 180px;
+    padding: 1.2rem;
   }
 }
 
@@ -1563,115 +1716,6 @@ main {
   color: var(--muted);
 }
 
-@media (max-width: 640px) {
-  html,
-  body {
-    min-height: auto;
-    height: auto;
-  }
-
-  main {
-    gap: 1.5rem;
-    padding-bottom: 2rem;
-  }
-
-  .section {
-    min-height: auto;
-    padding: 2rem 1.25rem;
-    display: block;
-  }
-
-  .section.story-step {
-    display: none;
-  }
-
-  .section.story-step.is-active {
-    display: block;
-  }
-
-  .hold-button {
-    width: 180px;
-    height: 180px;
-  }
-
-  .form__actions {
-    flex-direction: column;
-  }
-
-  .primary,
-  .ghost {
-    width: 100%;
-    text-align: center;
-  }
-
-  .boot__inner {
-    width: 100%;
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
-  .boot__rings {
-    margin-inline: auto;
-  }
-
-  .impact__panels {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .impact__panel {
-    padding: 2rem 1.5rem;
-    min-height: 280px;
-  }
-
-  .impact__panel .copy-stack h3 {
-    font-size: clamp(1.3rem, 5vw, 1.5rem);
-  }
-
-  .impact__panel .copy-stack p {
-    font-size: clamp(0.95rem, 3vw, 1rem);
-  }
-
-  .section__nav {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .impact__statements {
-    flex-direction: column;
-  }
-
-  .interaction-hint {
-    left: 50%;
-    right: auto;
-    bottom: 1rem;
-    transform: translateX(-50%);
-  }
-
-  .cases #cases-title {
-    text-align: center;
-    font-size: clamp(1.4rem, 6vw, 1.9rem);
-    line-height: 1.25;
-  }
-
-  .closing-hero {
-    padding: 1rem;
-  }
-
-  .closing-hero__lead {
-    text-align: center;
-    align-items: center;
-  }
-
-  .closing-hero__lead h1 {
-    font-size: clamp(2.1rem, 7vw, 2.8rem);
-  }
-
-  .closing-lede {
-    font-size: clamp(1.1rem, 4.5vw, 1.35rem);
-    line-height: 1.4;
-  }
-}
 
 @keyframes orbDrift {
   0% {
@@ -1922,23 +1966,6 @@ main {
   color: var(--accent);
 }
 
-@media (max-width: 640px) {
-  .floating-nav {
-    top: 10px;
-    left: 10px;
-  }
-
-  .floating-nav__toggle {
-    width: 45px;
-    height: 45px;
-    font-size: 1.3rem;
-  }
-
-  .floating-nav__content {
-    min-width: 180px;
-    padding: 1.2rem;
-  }
-}
 
 /* GLOW EFFECT */
 .glow {
